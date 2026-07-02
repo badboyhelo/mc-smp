@@ -1,3 +1,16 @@
+/* Allow scrolling on this page */
+html, body {
+  overflow: auto;
+}
+
+/* Keep gradient covering full scroll height */
+.bg {
+  position: fixed;
+}
+.noise {
+  position: fixed;
+}
+
 /* ── Social Page Layout ── */
 .social-page {
   position: relative;
