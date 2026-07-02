@@ -81,7 +81,9 @@ html, body {
 /* ── Buttons ── */
 .btn-group {
   display: flex;
-  gap: 16px;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
   margin-top: 40px;
   pointer-events: all;
   animation: fadeIn 1.4s ease forwards;
