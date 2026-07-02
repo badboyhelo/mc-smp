@@ -141,6 +141,19 @@ html, body {
   opacity: 0;
 }
 
+.profile-left {
+  right: unset;
+  left: 36px;
+}
+
+.profile-flipped {
+  transform: scaleX(-1);
+}
+
+.profile-flipped:hover {
+  transform: scaleX(-1) scale(1.08);
+}
+
 .profile-pic {
   width: 110px;
   height: 110px;
