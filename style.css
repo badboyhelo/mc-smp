@@ -57,8 +57,9 @@ html, body {
   position: fixed;
   inset: 0;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   padding-top: 48px;
   pointer-events: none;
 }
@@ -77,3 +78,55 @@ html, body {
   100% { opacity: 1; transform: translateY(0)     scale(1); }
 }
 
+/* ── Buttons ── */
+.btn-group {
+  display: flex;
+  gap: 16px;
+  margin-top: 40px;
+  pointer-events: all;
+  animation: fadeIn 1.4s ease forwards;
+  opacity: 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 36px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+  background: #0a0a0a;
+  border: 1.5px solid rgba(255,255,255,0.25);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.btn:hover {
+  border-color: rgba(255,255,255,0.7);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(255,255,255,0.1), 0 2px 20px rgba(0,0,0,0.6);
+}
+
+.btn:hover::before {
+  opacity: 1;
+}
+
+.btn:active {
+  transform: translateY(0);
+}
