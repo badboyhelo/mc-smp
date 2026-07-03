@@ -159,3 +159,49 @@ html, body {
     0 6px 28px rgba(0,0,0,0.7),
     0 0 28px rgba(255,255,255,0.2);
 }
+
+/* ── Coming Soon ── */
+.coming-soon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-top: 48px;
+  pointer-events: none;
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
+}
+
+.coming-soon-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  color: rgba(255,255,255,0.3);
+  text-transform: uppercase;
+}
+
+.dots {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  animation: wave 1.4s ease-in-out infinite;
+}
+
+.dot:nth-child(1) { animation-delay: 0s; }
+.dot:nth-child(2) { animation-delay: 0.15s; }
+.dot:nth-child(3) { animation-delay: 0.3s; }
+.dot:nth-child(4) { animation-delay: 0.45s; }
+.dot:nth-child(5) { animation-delay: 0.6s; }
+
+@keyframes wave {
+  0%, 100% { transform: translateY(0);    opacity: 0.3; }
+  50%       { transform: translateY(-8px); opacity: 1; }
+}
