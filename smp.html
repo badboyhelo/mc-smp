@@ -3,15 +3,112 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Humbless SMP — Minecraft survival multiplayer." />
-    <title>Humbless SMP</title>
+    <meta name="description" content="Humbless SMP — Coming Soon." />
+    <title>Humbless SMP — Coming Soon</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .smp-page {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+        z-index: 5;
+      }
+
+      .smp-label {
+        font-family: 'Inter', sans-serif;
+        font-size: clamp(0.6rem, 2vw, 0.75rem);
+        font-weight: 700;
+        letter-spacing: 0.4em;
+        color: rgba(255,255,255,0.25);
+        text-transform: uppercase;
+        animation: fadeIn 1s ease forwards;
+        opacity: 0;
+      }
+
+      .smp-coming-text {
+        font-family: 'Inter', sans-serif;
+        font-size: clamp(1.8rem, 6vw, 3.5rem);
+        font-weight: 900;
+        letter-spacing: 0.2em;
+        color: #ffffff;
+        text-transform: uppercase;
+        text-align: center;
+        animation: fadeIn 1.2s ease forwards;
+        opacity: 0;
+      }
+
+      .smp-dots {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        animation: fadeIn 1.5s ease forwards;
+        opacity: 0;
+      }
+
+      .smp-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.6);
+        animation: wave 1.4s ease-in-out infinite;
+      }
+
+      .smp-dot:nth-child(1) { animation-delay: 0s; }
+      .smp-dot:nth-child(2) { animation-delay: 0.15s; }
+      .smp-dot:nth-child(3) { animation-delay: 0.3s; }
+      .smp-dot:nth-child(4) { animation-delay: 0.45s; }
+      .smp-dot:nth-child(5) { animation-delay: 0.6s; }
+
+      @keyframes wave {
+        0%, 100% { transform: translateY(0);     opacity: 0.25; }
+        50%       { transform: translateY(-10px); opacity: 1; }
+      }
+
+      @keyframes fadeIn {
+        0%   { opacity: 0; transform: translateY(12px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+
+      .back-btn {
+        position: fixed;
+        top: 24px;
+        left: 20px;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        color: rgba(255,255,255,0.4);
+        text-decoration: none;
+        transition: color 0.25s;
+        z-index: 10;
+      }
+
+      .back-btn:hover { color: #ffffff; }
+    </style>
   </head>
   <body>
     <div class="bg"></div>
     <div class="noise"></div>
+
+    <a href="index.html" class="back-btn">← BACK</a>
+
+    <div class="smp-page">
+      <p class="smp-label">HUMBLESS SMP</p>
+      <h1 class="smp-coming-text">COMING SOON</h1>
+      <div class="smp-dots">
+        <span class="smp-dot"></span>
+        <span class="smp-dot"></span>
+        <span class="smp-dot"></span>
+        <span class="smp-dot"></span>
+        <span class="smp-dot"></span>
+      </div>
+    </div>
   </body>
 </html>
