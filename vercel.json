@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/map/:path*",
-      "destination": "http://humblesssssmp.ultramc.co:12012/:path*"
-    }
-  ]
-}
