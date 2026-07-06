@@ -91,8 +91,7 @@
       }
       .back-btn:hover { color: #ffffff; }
 
-      /* ── Shared button style ── */
-      .smp-btn {
+      .smp-reels-btn {
         display: inline-block;
         padding: 16px 48px;
         font-family: 'Inter', sans-serif;
@@ -111,122 +110,10 @@
         animation: fadeIn 1.8s ease forwards;
         opacity: 0;
       }
-      .smp-btn:hover {
+      .smp-reels-btn:hover {
         border-color: rgba(255,255,255,0.7);
         transform: translateY(-2px);
         box-shadow: 0 6px 30px rgba(255,255,255,0.1);
-      }
-
-      /* ── Experimental button ── */
-      .smp-btn-experimental {
-        border-color: rgba(255, 80, 80, 0.4);
-        animation-delay: 0.2s;
-      }
-      .smp-btn-experimental:hover {
-        border-color: rgba(255, 80, 80, 0.9);
-        box-shadow: 0 6px 30px rgba(255, 60, 60, 0.2);
-      }
-
-      /* ── Warning Modal ── */
-      .modal-backdrop {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.85);
-        backdrop-filter: blur(6px);
-        z-index: 200;
-        align-items: center;
-        justify-content: center;
-      }
-      .modal-backdrop.show {
-        display: flex;
-      }
-
-      .modal {
-        background: #0d0d0d;
-        border: 1.5px solid rgba(255,80,80,0.4);
-        border-radius: 10px;
-        max-width: 420px;
-        width: 90%;
-        padding: 36px 32px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        animation: modalIn 0.3s ease forwards;
-        box-shadow: 0 0 60px rgba(255,50,50,0.1), 0 8px 40px rgba(0,0,0,0.8);
-      }
-
-      @keyframes modalIn {
-        0%   { opacity: 0; transform: scale(0.92) translateY(16px); }
-        100% { opacity: 1; transform: scale(1)    translateY(0); }
-      }
-
-      .modal-icon {
-        font-size: 2rem;
-        text-align: center;
-      }
-
-      .modal-title {
-        font-family: 'Inter', sans-serif;
-        font-size: 0.75rem;
-        font-weight: 900;
-        letter-spacing: 0.3em;
-        color: rgba(255,80,80,0.9);
-        text-transform: uppercase;
-        text-align: center;
-      }
-
-      .modal-body {
-        font-family: 'Inter', sans-serif;
-        font-size: 0.88rem;
-        font-weight: 400;
-        color: rgba(255,255,255,0.75);
-        line-height: 1.65;
-        text-align: center;
-      }
-
-      .modal-body strong {
-        color: #ffffff;
-        font-weight: 700;
-      }
-
-      .modal-actions {
-        display: flex;
-        gap: 12px;
-        justify-content: center;
-      }
-
-      .modal-btn {
-        padding: 12px 32px;
-        border-radius: 4px;
-        font-family: 'Inter', sans-serif;
-        font-size: 0.78rem;
-        font-weight: 700;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        cursor: pointer;
-        border: 1.5px solid;
-        transition: transform 0.15s, box-shadow 0.2s;
-      }
-
-      .modal-btn:hover { transform: translateY(-1px); }
-
-      .modal-btn-cancel {
-        background: transparent;
-        border-color: rgba(255,255,255,0.2);
-        color: rgba(255,255,255,0.5);
-      }
-      .modal-btn-cancel:hover { border-color: rgba(255,255,255,0.5); color: #fff; }
-
-      .modal-btn-ok {
-        background: rgba(255,50,50,0.15);
-        border-color: rgba(255,80,80,0.5);
-        color: rgba(255,130,130,1);
-      }
-      .modal-btn-ok:hover {
-        background: rgba(255,50,50,0.25);
-        border-color: rgba(255,80,80,0.9);
-        box-shadow: 0 4px 20px rgba(255,50,50,0.2);
       }
     </style>
   </head>
@@ -246,39 +133,7 @@
         <span class="smp-dot"></span>
         <span class="smp-dot"></span>
       </div>
-      <a href="reels.html" class="smp-btn" id="btn-reels">Humbless Reels</a>
-      <button class="smp-btn smp-btn-experimental" id="btn-experimental" onclick="openWarning()">⚠ Experimental</button>
+      <a href="reels.html" class="smp-reels-btn" id="btn-reels">Humbless Reels</a>
     </div>
-
-    <!-- Warning Modal -->
-    <div class="modal-backdrop" id="warningModal">
-      <div class="modal">
-        <div class="modal-icon">☣️</div>
-        <div class="modal-title">⚠ WARNING — READ CAREFULLY</div>
-        <div class="modal-body">
-          By clicking <strong>I AGREE</strong>, you are agreeing to the following life-threatening acts:<br><br>
-          Exposure to <strong>chemical substances of Villagers</strong>, potential <strong>Humbless hacking your account</strong>, spontaneous combustion of your Minecraft house, and other highly dangerous activities that we are definitely not legally responsible for.
-          <br><br>
-          <span style="font-size:0.75rem; color: rgba(255,255,255,0.35);">You have been warned. Proceed at your own risk.</span>
-        </div>
-        <div class="modal-actions">
-          <button class="modal-btn modal-btn-cancel" onclick="closeWarning()">CANCEL</button>
-          <button class="modal-btn modal-btn-ok" onclick="acceptWarning()">I AGREE</button>
-        </div>
-      </div>
-    </div>
-
-    <script>
-      function openWarning() {
-        document.getElementById('warningModal').classList.add('show');
-      }
-      function closeWarning() {
-        document.getElementById('warningModal').classList.remove('show');
-      }
-      function acceptWarning() {
-        window.open('http://humblesssssmp.ultramc.co:12012/#world:-312:0:434:5795:0:0:0:0:perspective', '_blank', 'noopener');
-        closeWarning();
-      }
-    </script>
   </body>
 </html>
